@@ -11,7 +11,7 @@ for(let i = 0; i<toRewriteList.length; i++){
 function rewrite(element){
     let content = element.innerHTML;
     
-    element.innerHTML = "";
+    element.innerHTML = "*";
     let i = -10;
     let animationContent = "";
     let itervalID = setInterval(function() {
