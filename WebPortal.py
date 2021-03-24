@@ -62,7 +62,7 @@ def listServiceStates():
         url = item[1]
         innerBuild = ""
         innerBuild += "<li>"
-        innerBuild += f"<span><a href='{url}' class='ProjectName'>{name}</a></span><br>"
+        innerBuild += f"<span class='hvr-shrink'><a href='{url}' class='ProjectName'>{name}</a></span><br>"
 
         if url in reachability_list:
             on = reachability_list[url]
@@ -98,5 +98,11 @@ if __name__ == "__main__":
     port = 25565
     if SETTINGS_READ_PARAMETER("port") != None:
         port = int(SETTINGS_READ_PARAMETER("port"))
-    app.run(debug=True, host="0.0.0.0", port=port, threaded=True)
+
+    debug = True
+    if SETTINGS_READ_PARAMETER("debug") != None:
+        print("found...")
+        debug = SETTINGS_READ_PARAMETER("debug")
+    print(f"Red --> Debug: {debug} | port: {port}")
+    app.run(debug=debug, host="0.0.0.0", port=port, threaded=True)
 

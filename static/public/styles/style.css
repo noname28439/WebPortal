@@ -23,6 +23,8 @@ body{
 
 .header{
     font-family: "Oswald";
+    font-size: 250%;
+    margin: 0px;
 }
 
 .ProjectName{
@@ -70,7 +72,7 @@ body{
 @media (max-width: 1000px) {
     .MainContentContainer{
         left: 10%;
-        width: 80%;
+        width: 70%;
     }
 
     .ProgrammActivityList{
