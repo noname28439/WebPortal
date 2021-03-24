@@ -1,7 +1,8 @@
 body{
-    background-image: url("/static/public/CodeBlur.png");
+    background-image: url("/static/public/CodeLangBlur.png");
 
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
+    background-repeat: repeat-y;
     background-size: cover;
     background-attachment: fixed;
 
