@@ -53,7 +53,7 @@ state_on = "🍏online"
 state_off = "🍎offline"
 
 #Syntax: Name, onRequestAdress
-serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
+serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["AccessCore", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
 def listServiceStates():
     toReturn = ""
 
