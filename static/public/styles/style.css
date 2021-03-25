@@ -10,8 +10,20 @@ body{
     font-size: 120%;
 }
 
-hideheader:hover{
-    cursor: pointer;
+.hideheader:hover{
+
+}
+
+.mousepointer:hover{
+}
+
+.hideheader {
+    font-size: 150%;
+    color: darkorange;
+}
+
+.openSection{
+    margin-left: 3%;
 }
 
 .infoText {
@@ -21,6 +33,8 @@ hideheader:hover{
 .Uheader{
     font-family: "Oswald";
     font-size: 200%;
+    position: relative;
+    left: 5%;
 }
 
 .header{

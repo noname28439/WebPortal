@@ -41,6 +41,85 @@ def website_on(link):
 reachability_list = {}
 
 
+#Syntax: "header", "classes", opened on website load
+DROPDOWN_LIST = [
+    ["Pyton", [
+                ["Basic Python", []],
+                ["Selenium", []],
+                ["Flask WebServers", []]
+              ]
+     ],
+    ["Java", [
+                ["Socket Programming", [
+                    ["What is socket programming?", "Sockets are a way of transferring information over the Internet with the TCP protocol.", False],
+                    ["Where did you use socket programming before?", "In some projects you little shit!", False]
+                ]],
+                ["2D Games", [
+                    ["Examples for games you created?", "CardGame, ModGame, NoNameGame", True]
+                ]],
+                ["Discord Bots", [
+                    ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
+                    ["What is a Discord bot?", "Under a discord bot you understand a program, that connects to the discord server and remote controlls an user over an API (In this case the Java Discord APT (JDA)).<br>This remotely controlled account can then perform actions to manage the users.", False]
+                ]]
+             ]
+    ],
+    ["Web Development", [
+                ["js", []],
+                ["html", []],
+                ["css", []],
+                ["SQL", []]
+              ]
+    ],
+    ["Microcontroller Programming", [
+                ["Arduino", []],
+                ["ESP32", []]
+              ]
+     ]
+]
+
+
+
+def buildDropdowns(item_list):
+    outputHTML = ""
+    for language_block in item_list:
+        language_block_header = language_block[0]
+        language_block_skills = language_block[1]
+
+        outputHTML += f"""<p><u class="Uheader">{language_block_header}</u></p>"""
+
+        for skill in language_block_skills:
+            skill_block_header = skill[0]
+            skill_block_faq = skill[1]
+            skill_opening_section_id = f"Section_{language_block_header}_{skill_block_header}".replace(' ', '').replace("?", "").replace(".", "").replace(",", "").replace("/", "")
+            outputHTML += f"""
+            <p data-toggle="collapse" data-target="#{skill_opening_section_id}" class="hvr-grow hideheader mousepointer"><u>{skill_block_header}</u></p><br>
+            <div class="infoText collapse openSection" id="{skill_opening_section_id}">
+            """
+
+            for faq_block in skill_block_faq:
+                faq_block_question = faq_block[0]
+                faq_block_answer = faq_block[1]
+                faq_block_show = faq_block[2]
+                show_string = ""
+                if faq_block_show:
+                    show_string = "in"
+                faq_opening_section_id = f"Section_{language_block_header}_{skill_block_header}_{faq_block_question}".replace(' ', '').replace("?", "").replace(".", "").replace(",", "").replace("/", "")
+                outputHTML += f"""
+                <p data-toggle="collapse" data-target="#{faq_opening_section_id}" class="hvr-grow mousepointer"><u>{faq_block_question}</u></p><br>
+                <div id="{faq_opening_section_id}" class="collapse {show_string}">{faq_block_answer}<br></div>
+                """
+
+            outputHTML += "</div>"
+
+        
+
+
+    return outputHTML
+
+print("BuiltHTML: "+buildDropdowns(DROPDOWN_LIST))
+
+
+
 def thread_requesting():
     while True:
         for item in serviceList:
@@ -83,7 +162,7 @@ def listServiceStates():
 
 @app.route("/", methods=["POST", "GET"])
 def main():
-    return render_template("index.html", PY_ON_SERVICES=Markup(listServiceStates()))
+    return render_template("index.html", PY_ON_SERVICES=Markup(listServiceStates()), PY_EXPERIENCE_SECTION=Markup(buildDropdowns(DROPDOWN_LIST)))
 
 
 
