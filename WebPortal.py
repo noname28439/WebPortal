@@ -56,19 +56,16 @@ state_off = "🍎offline"
 serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["AccessCore", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
 def listServiceStates():
     toReturn = ""
-
     for item in serviceList:
         name = item[0]
         url = item[1]
         innerBuild = ""
         innerBuild += "<li>"
         innerBuild += f"<span class='hvr-shrink'><a href='{url}' class='ProjectName'>{name}</a></span><br>"
-
         if url in reachability_list:
             on = reachability_list[url]
         else:
             on = False
-
         color = ""
         msg = ""
         if on:

@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!--<meta http-equiv="refresh" content="2">-->
 </head>
 <body>
@@ -24,9 +27,7 @@
 
         <br><br>
         <h1 class="header" >--Experience--</h1>
-        <!--
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+
         <br><br>
 
         <p><u class="Uheader">Python</u></p>
@@ -51,7 +52,8 @@
         <p class="nanoHeader">Discord Bots (JDA)</p>
         <p>asd</p>
 
-        <p style="" class="infoText">
+        <p data-toggle="collapse" data-target="#oit1" class="hvr-grow hideheader"><u>Open/Close</u></p>
+        <p style="" class="infoText collapse" id="oit1">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
             tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
             duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -61,12 +63,15 @@
         </p>
 
 
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
     </center>
 
 </div>
 
-<div class="ProgrammActivityList">
-    <p style="padding:0px; margin:0px; margin-top: 10px; margin-left: 10px;"><u>Projects</u></p>
+<div class="ProgrammActivityList" style="font-size: 150%;">
+    <p style="padding:0px; margin:0px; margin-top: 10px; margin-left: 10px; font-size: 200%;"><u>Projects</u></p>
     <ul>
         {{PY_ON_SERVICES}}
     </ul>

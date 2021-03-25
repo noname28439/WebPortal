@@ -10,6 +10,10 @@ body{
     font-size: 120%;
 }
 
+hideheader:hover{
+    cursor: pointer;
+}
+
 .infoText {
     font-size: 150%;
 }
@@ -76,7 +80,7 @@ body{
 @media (max-width: 1000px) {
     .MainContentContainer{
         left: 10%;
-        width: 70%;
+        width: 80%;
     }
 
     .ProgrammActivityList{
