@@ -44,9 +44,9 @@ reachability_list = {}
 #Syntax: "header", "classes", opened on website load
 DROPDOWN_LIST = [
     ["Pyton", [
-                ["Basic Python", []],
+                ["Flask WebServers", []],
                 ["Selenium", []],
-                ["Flask WebServers", []]
+                ["Basic Python", []]
               ]
      ],
     ["Java", [
@@ -55,19 +55,29 @@ DROPDOWN_LIST = [
                     ["Where did you use socket programming before?", "In some projects you little shit!", False]
                 ]],
                 ["2D Games", [
-                    ["Examples for games you created?", "CardGame, ModGame, NoNameGame", True]
+                    ["Examples for games you created?", "CardGame, ModGame, NoNameGame", False]
                 ]],
                 ["Discord Bots", [
                     ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
-                    ["What is a Discord bot?", "Under a discord bot you understand a program, that connects to the discord server and remote controlls an user over an API (In this case the Java Discord APT (JDA)).<br>This remotely controlled account can then perform actions to manage the users.", False]
+                    ["What is a Discord bot?", """A discord bot is a program that connects to the discord server and remote controlls an account over the Java Discord API (JDA).<br>
+                                                    This remotely controlled account can then perform actions to manage the users.""", False]
                 ]]
              ]
     ],
     ["Web Development", [
-                ["js", []],
-                ["html", []],
-                ["css", []],
-                ["SQL", []]
+                ["JavaScript", [
+                    ["Examples", "Chart JS --> OnTimeLogger/TempLogger", False]
+                ]],
+                ["html", [
+                    ["What is html?", "HTML is markup language, used to create the basic structure fo websites.", False]
+                ]],
+                ["css", [
+                    ["What is css?", "CSS is used to define, how a HTML elemet should look.", False],
+                    ["Interesting example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
+                ]],
+                ["SQL", [
+                    ["What is SQL?", "SQL is a database type that is very popular. You use databases to store user infomation like accounts and passwords.", False]
+                ]]
               ]
     ],
     ["Microcontroller Programming", [
@@ -77,6 +87,9 @@ DROPDOWN_LIST = [
      ]
 ]
 
+
+#Syntax: Name, onRequestAdress
+serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
 
 
 def buildDropdowns(item_list):
@@ -90,9 +103,14 @@ def buildDropdowns(item_list):
         for skill in language_block_skills:
             skill_block_header = skill[0]
             skill_block_faq = skill[1]
+            effectclasses = "mousepointer hvr-grow"
+            afterbr = "<br>"
+            if len(skill_block_faq) == 0:
+                effectclasses = ""
+                afterbr = ""
             skill_opening_section_id = f"Section_{language_block_header}_{skill_block_header}".replace(' ', '').replace("?", "").replace(".", "").replace(",", "").replace("/", "")
             outputHTML += f"""
-            <p data-toggle="collapse" data-target="#{skill_opening_section_id}" class="hvr-grow hideheader mousepointer"><u>{skill_block_header}</u></p><br>
+            <p data-toggle="collapse" data-target="#{skill_opening_section_id}" class="hideheader {effectclasses}"><u>{skill_block_header}</u></p>{afterbr}
             <div class="infoText collapse openSection" id="{skill_opening_section_id}">
             """
 
@@ -100,24 +118,23 @@ def buildDropdowns(item_list):
                 faq_block_question = faq_block[0]
                 faq_block_answer = faq_block[1]
                 faq_block_show = faq_block[2]
+                if len(skill_block_faq) == 1:
+                    faq_block_show = True
                 show_string = ""
                 if faq_block_show:
                     show_string = "in"
                 faq_opening_section_id = f"Section_{language_block_header}_{skill_block_header}_{faq_block_question}".replace(' ', '').replace("?", "").replace(".", "").replace(",", "").replace("/", "")
                 outputHTML += f"""
                 <p data-toggle="collapse" data-target="#{faq_opening_section_id}" class="hvr-grow mousepointer"><u>{faq_block_question}</u></p><br>
-                <div id="{faq_opening_section_id}" class="collapse {show_string}">{faq_block_answer}<br></div>
+                <div id="{faq_opening_section_id}" class="collapse {show_string} answer">{faq_block_answer}<br></div>
                 """
 
             outputHTML += "</div>"
 
-        
-
 
     return outputHTML
 
-print("BuiltHTML: "+buildDropdowns(DROPDOWN_LIST))
-
+#print("BuiltHTML: "+buildDropdowns(DROPDOWN_LIST))
 
 
 def thread_requesting():
@@ -131,8 +148,7 @@ def thread_requesting():
 state_on = "🍏online"
 state_off = "🍎offline"
 
-#Syntax: Name, onRequestAdress
-serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["AccessCore", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
+
 def listServiceStates():
     toReturn = ""
     for item in serviceList:

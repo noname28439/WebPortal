@@ -10,11 +10,22 @@ body{
     font-size: 120%;
 }
 
+.contactLink{
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
 .hideheader:hover{
 
 }
 
+.answer{
+    margin-left: 2%;
+}
+
 .mousepointer:hover{
+    cursor: pointer;
 }
 
 .hideheader {
@@ -98,8 +109,7 @@ body{
     }
 
     .ProgrammActivityList{
-        float: bottom;
-
+        bottom: 3%;
     }
 }
 
