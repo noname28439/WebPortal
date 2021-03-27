@@ -21,6 +21,7 @@ function trigger_easteregg(remove){
     }, 100)
 }
 
+
 function spawn(removeOnEnd){
     console.log("Triggered Easteregg...")
     let element = document.createElement("p");
@@ -40,8 +41,9 @@ function spawn(removeOnEnd){
     let yspeed = getRandomInt(3)-1;
     let rotation = 180;
 
-    var LIVETIME = 1000;
+    var LIVETIME = 500+getRandomInt(200);
     let lived = 0;
+    let rotationspeed = getRandomInt(5)+1;
 
     let itervalID = setInterval(function() {
         lived++;
@@ -60,7 +62,7 @@ function spawn(removeOnEnd){
         }
         if(x < 0 && xspeed < 0)
             xspeed = -xspeed;
-        if(x > WIN_WIDTH && xspeed > 0)
+        if(x+element.style.width > WIN_WIDTH && xspeed > 0)
             xspeed = -xspeed;
 
         //Set x and y position
@@ -68,7 +70,7 @@ function spawn(removeOnEnd){
         y += yspeed;
 
 
-        rotation+=getRandomInt(5);
+        rotation+=rotationspeed;
         if(rotation>360){
             rotation = 0;
         }
@@ -76,6 +78,7 @@ function spawn(removeOnEnd){
         element.style.transform = "rotate("+rotation+"deg)";
         element.style.left = x+"px";
         element.style.top = y+"px";
+
 
 
         if(lived > LIVETIME){

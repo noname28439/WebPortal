@@ -59,7 +59,13 @@ DROPDOWN_LIST = [
              ]
     ],["Pyton", [
                 ["Flask WebServers", [
-                    ["What is a WebServer?", "A WebServer is just a program that runs on a server and makes a website available to users. ", False]
+                    ["What is a WebServer?", "A WebServer is just a program that runs on a server and makes a website available to users.", False],
+                    ["What is a Flask?", "Flask is a simple Python library used to create WebServers in Python.", False],
+                    ["Where did you use PythonFlask WebServers before?", """Almost all of the websites I currently host are made with Python and Flask.<br><br>
+                    For example Project like this Page, The FileStorageServer or the ODIN-Projectare completely made in Python and mostly with Flask.<br>
+                    But you can find python flask also In a lot of my other Projects, like the Temperature Logger or the ModGame WebServer.
+                    
+                    """, False]
                 ]],
                 ["Selenium", [
                     ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False]
@@ -76,10 +82,10 @@ DROPDOWN_LIST = [
                     ["Interesting example", "<button onclick='console.log(this.innerText);if(this.innerText==\"Click me!\"){trigger_easteregg(true);rewrite(this);}'>Click me!</button>", False]
                 ]],
                 ["html", [
-                    ["What is html?", "HTML is markup language, used to create the basic structure fo websites.", False]
+                    ["What is html?", "HTML is markup language, used to create the basic structure of websites.", False]
                 ]],
                 ["css", [
-                    ["What is css?", "CSS is used to define, how a HTML elemet should look.", False],
+                    ["What is css?", "CSS is used to define very precise, how a HTML elemet should look.", False],
                     ["Interesting example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
                 ]],
                 ["SQL", [
@@ -96,7 +102,7 @@ DROPDOWN_LIST = [
 
 
 #Syntax: Name, onRequestAdress
-serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"]]
+serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"], ["DownloadServer", "http://nonamenetwork.hopto.org:34567/"]]
 
 
 def buildDropdowns(item_list):
@@ -164,18 +170,18 @@ def listServiceStates():
         innerBuild = ""
         innerBuild += "<li>"
         innerBuild += f"<span class='hvr-shrink'><a href='{url}' class='ProjectName'>{name}</a></span><br>"
-        if url in reachability_list:
-            on = reachability_list[url]
-        else:
-            on = False
-        color = ""
         msg = ""
-        if on:
-            color = "green"
-            msg = state_on
+        color = ""
+        if url in reachability_list:
+            if reachability_list[url]:
+                msg = state_on
+                color = "green"
+            else:
+                msg = state_off
+                color = "red"
         else:
-            color = "red"
-            msg = state_off
+            msg = "loading..."
+            color = "grey"
         innerBuild += f"<span class='retype onstate' style='color: {color};'>{msg}</span>"
         innerBuild += "</li>"
 
