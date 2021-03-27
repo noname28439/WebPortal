@@ -6,27 +6,37 @@
     <link rel="stylesheet" href="/static/public/styles/style.css">
     <link rel="stylesheet" href="/static/public/styles/hover.css">  <!--class="hvr-shrink"-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&family=Nunito&family=Roboto&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /*Overwrite Bootstrap*/
+        body{
+            font-family: "Nunito";
+        }
+
+    </style>
     <!--<meta http-equiv="refresh" content="2">-->
 </head>
 <body>
 
 <script src="/static/public/scripts/backgroundMover.js" type="text/javascript"></script>
+<script src="/static/public/scripts/easteregg.js"></script>
 
 <div class="MainContentContainer">
     <center>
-        <h1 class="header" >--Introduction--</h1>
+        <h1 class="header" >--Introduction--</h1><br>
         <p class="infoText">
             Hello and welcome, or as we say in germany "Moin Meister"!<br>
-            My name is Leon and I initially started programming Java in 2015.
+            My name is Leon and I initially started programming Java in 2015.<br>
+            From there on I started gathering as much knowledge as I could.<br>
+            So you can find a list of the things I worked with in the last years down below. (click them)
         </p>
 
         <br><br>
-        <h1 class="header" >--Experience--</h1>
+        <h1 class="header" onclick="spawn(true)">--Experience--</h1>
 
         <br><br>
     </center>
@@ -43,7 +53,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="contactBox">
         <center>
-           <img src="https://github.com/fluidicon.png" class='contactLink mousepointer' onclick="document.location='https://github.com/noname28439'" title="Github">
+           <img src="https://github.com/fluidicon.png" class='contactLink mousepointer hvr-bounce-in' onclick="document.location='https://github.com/noname28439'" title="Github">
         </center>
     </div>
 </div>
@@ -55,60 +65,6 @@
         {{PY_ON_SERVICES}}
     </ul>
 </div>
-
-
-
-
-
-
-    <!--
-    <p><u class="Uheader">Python</u></p>
-
-    <p><u class="Uheader">Java</u></p>
-
-    <p data-toggle="collapse" data-target="#Section_socketProgramming" class="hvr-grow hideheader"><u>Socket Programming</u></p><br>
-    <div class="infoText collapse openSection" id="Section_socketProgramming">
-        <p data-toggle="collapse" data-target="#Section_socketProgramming_what" class="hvr-grow"><u>What is socket programming?</u></p><br>
-        <div id="Section_socketProgramming_what" class="collapse">Sockets are a way of transferring information over the Internet with the TCP protocol.<br></div>
-
-        <p data-toggle="collapse" data-target="#Section_socketProgramming_use" class="hvr-grow"><u>Where did you use socket programming before?</u></p><br>
-        <div id="Section_socketProgramming_use" class="collapse">In some projects you little shit!<br></div>
-    </div>
-
-    <p data-toggle="collapse" data-target="#Section_2DGames" class="hvr-grow hideheader"><u>2D Games</u></p><br>
-    <div class="infoText collapse openSection" id="Section_2DGames">
-        <p data-toggle="collapse" data-target="#Section_2DGames_example" class="hvr-grow"><u>Examples for games?</u></p><br>
-        <div id="Section_2DGames_example" class="collapse in">
-            <p>
-                CardGame, ModGame, NoNameGame
-            </p>
-            <br>
-        </div>
-    </div>
-
-    <p data-toggle="collapse" data-target="#Section_DiscordBots" class="hvr-grow hideheader"><u>Discord Bots (JDA)</u></p><br>
-    <div class="infoText collapse openSection" id="Section_DiscordBots">
-        <p data-toggle="collapse" data-target="#Section_DiscordBots_what_DC" class="hvr-grow"><u>What is Discord?</u></p><br>
-        <div id="Section_DiscordBots_what_DC" class="collapse">
-            <p>
-                Discord is an app, where you can talk or write with other people just like an online meeting.
-            </p>
-            <br>
-        </div>
-        <p data-toggle="collapse" data-target="#Section_DiscordBots_what_DC_Bots" class="hvr-grow"><u>What is a Discord bot?</u></p><br>
-        <div id="Section_DiscordBots_what_DC_Bots" class="collapse">
-            <p>
-                Under a discord bot you understand a program, that connects to the discord server and remote controlls an user over an API (In this case the Java Discord APT (JDA)).
-                <br>
-                This remotely controlled account can then perform actions to manage the users.
-            </p>
-            <br>
-        </div>
-    </div>
-
--->
-
-
 
 
 <!--

@@ -43,12 +43,6 @@ reachability_list = {}
 
 #Syntax: "header", "classes", opened on website load
 DROPDOWN_LIST = [
-    ["Pyton", [
-                ["Flask WebServers", []],
-                ["Selenium", []],
-                ["Basic Python", []]
-              ]
-     ],
     ["Java", [
                 ["Socket Programming", [
                     ["What is socket programming?", "Sockets are a way of transferring information over the Internet with the TCP protocol.", False],
@@ -63,10 +57,23 @@ DROPDOWN_LIST = [
                                                     This remotely controlled account can then perform actions to manage the users.""", False]
                 ]]
              ]
-    ],
+    ],["Pyton", [
+                ["Flask WebServers", [
+                    ["What is a WebServer?", "A WebServer is just a program that runs on a server and makes a website available to users. ", False]
+                ]],
+                ["Selenium", [
+                    ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False]
+                ]],
+                ["Basic Python", [
+                    ["What du you mean with basic Python?", "Every library I used but didn't talk about before!", False]
+                ]]
+              ]
+     ],
     ["Web Development", [
                 ["JavaScript", [
-                    ["Examples", "Chart JS --> OnTimeLogger/TempLogger", False]
+                    ["What is JavaScript?", "JavaScript is a programming language, that can be executed by browsers to modify the page.", False],
+                    ["Where did you use JavaScript before?", "Chart JS --> OnTimeLogger/TempLogger", False],
+                    ["Interesting example", "<button onclick='console.log(this.innerText);if(this.innerText==\"Click me!\"){trigger_easteregg(true);rewrite(this);}'>Click me!</button>", False]
                 ]],
                 ["html", [
                     ["What is html?", "HTML is markup language, used to create the basic structure fo websites.", False]
@@ -76,7 +83,7 @@ DROPDOWN_LIST = [
                     ["Interesting example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
                 ]],
                 ["SQL", [
-                    ["What is SQL?", "SQL is a database type that is very popular. You use databases to store user infomation like accounts and passwords.", False]
+                    ["What is SQL?", "SQL is a very popular database type. You use databases to store user infomation like accounts and passwords.", False]
                 ]]
               ]
     ],
