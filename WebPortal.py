@@ -112,7 +112,9 @@ DROPDOWN_LIST = [
      ]
 ]
 
-
+if os.path.exists("./text-config.json"):
+    exec("DROPDOWN_LIST="+open("./text-config.json", "r").read())
+    print("loaded DropdownList from external file [\"./text-config.json\"]")
 
 #Syntax: Name, onRequestAdress
 serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"], ["DownloadServer", "http://nonamenetwork.hopto.org:34567/"]]

@@ -1,0 +1,67 @@
+[
+    ["Javas", [
+                ["Socket Programming", [
+                    ["What is socket programming?", "Sockets are a way of transferring information over the Internet with the TCP protocol.", False],
+                    ["Where did you use socket programming before?", "In some projects you little shit!", False]
+                ]],
+                ["2D Games", [
+                    ["Examples for games you created?", "CardGame, ModGame, NoNameGame", False]
+                ]],
+                ["Online Games", [
+                    ["What are online games?", """Online games are basically just 2D Games.<br> But the Content, that is shown in the game is syncronized over the internet. 
+                    So you can play online with other people. """, False],
+                    ["How much experience do you have with this topic?", """I have a lot of experience with the concept of syncronizing Games over the internet. 
+                    But I just built three or four large online games, becuase they are always a lot of work.<br>
+                    """, False],
+                    ["Which online Games have you built before?", """
+                    <p style='font-family: "Oswald";'><u>CardGame</u></p>
+                    <p style='font-family: "Oswald";'><u>ModGame</u></p>
+                    """, False]
+                ], "openclickExample"],
+                ["Discord Bots", [
+                    ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
+                    ["What is a Discord bot?", """A discord bot is a program that connects to the discord server and remote controlls an account over the Java Discord API (JDA).<br>
+                                                    This remotely controlled account can then perform actions to manage the users.""", False]
+                ]]
+             ]
+    ],["Pyton", [
+                ["Flask WebServers", [
+                    ["What is a WebServer?", "A WebServer is just a program that runs on a server and makes a website available to users.", False],
+                    ["What is a Flask?", "Flask is a simple Python library used to create WebServers in Python.", False],
+                    ["Where did you use PythonFlask WebServers before?", """Almost all of the websites I currently host are made with Python and Flask.<br><br>
+                    For example Project like this Page, The FileStorageServer or the ODIN-Projectare completely made in Python and mostly with Flask.<br>
+                    But you can find python flask also In a lot of my other Projects, like the Temperature Logger or the ModGame WebServer.
+                    """, False]
+                ]],
+                ["Selenium", [
+                    ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False]
+                ]],
+                ["Basic Python", [
+                    ["What do you mean with basic Python?", "Every library I used but didn't talk about before!", False]
+                ]]
+              ]
+     ],
+    ["Web Development", [
+                ["JavaScript", [
+                    ["What is JavaScript?", "JavaScript is a programming language, that can be executed by browsers to modify the page.", False],
+                    ["Where did you use JavaScript before?", "Chart JS --> OnTimeLogger/TempLogger", False],
+                    ["Interesting example", "<button onclick='trigger_easteregg(true); if(this.innerText==\"Click me!\"){rewrite(this);}'>Click me!</button>", False]
+                ]],
+                ["html", [
+                    ["What is html?", "HTML is markup language, used to create the basic structure of websites.", False]
+                ]],
+                ["css", [
+                    ["What is css?", "CSS is used to define very precise, how a HTML elemet should look.", False],
+                    ["Interesting example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
+                ]],
+                ["SQL", [
+                    ["What is SQL?", "SQL is a very popular database type. You use databases to store user infomation like accounts and passwords.", False]
+                ]]
+              ]
+    ],
+    ["Microcontroller Programming", [
+                ["Arduino", []],
+                ["ESP32", []]
+              ]
+     ]
+]
