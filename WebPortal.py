@@ -61,13 +61,25 @@ DROPDOWN_LIST = [
                     """, False],
                     ["Which online Games have you built before?", """
                     <p style='font-family: "Oswald";'><u>CardGame</u></p>
+                    <p>
+                    In CardGame you get Cards and then use them to damage your opponents. And finally knock them out, to that they can't do anything anymore. <br>
+                    <img style='height: 150px; float: right; margin-right: 10%;' src='/static/public/graphics/CG_Stammbaum.png' onclick="showFullScreen(this);">
+                    But you can also use many special tactics in the game for example you can combind some cards to even stronger ones to deal more damage. 
+                    And there are a bunch of special effects Cards that can be used to for example see or steal your opponents cards.
+                    You can also work in teams and give Cards to a player or revive him if he is down. 
+                    </p>
+                    
+                    <br>
                     <p style='font-family: "Oswald";'><u>ModGame</u></p>
+                    <p>
+                    <img style='width: 200px; height: 200px; float: right; margin-right: 10%;'>
+                    </p>
                     """, False]
                 ], "openclickExample"],
                 ["Discord Bots", [
                     ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
                     ["What is a Discord bot?", """A discord bot is a program that connects to the discord server and remote controlls an account over the Java Discord API (JDA).<br>
-                                                    This remotely controlled account can then perform actions to manage the users.""", False]
+                    This remotely controlled account can then perform actions to manage the users.""", False]
                 ]]
              ]
     ],["Pyton", [

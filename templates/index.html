@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         /*Overwrite Bootstrap*/
         body{
@@ -67,6 +68,19 @@
     </ul>
 </div>
 
+<script>
+function showFullScreen(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+</script>
+
+<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+  <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+  <div class="w3-modal-content w3-animate-zoom">
+    <img id="img01" style="width:100%">
+  </div>
+</div>
 
 <!--
 
