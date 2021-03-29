@@ -4,6 +4,8 @@ from flask import Flask, Markup, request, session, redirect, render_template
 import requests
 from threading import Thread
 import time
+import os
+import json
 
 def SETTINGS_READ_PARAMETER(key):
     PATH = '/home/pi/settings/settings'
@@ -51,6 +53,17 @@ DROPDOWN_LIST = [
                 ["2D Games", [
                     ["Examples for games you created?", "CardGame, ModGame, NoNameGame", False]
                 ]],
+                ["Online Games", [
+                    ["What are online games?", """Online games are basically just 2D Games.<br> But the Content, that is shown in the game is syncronized over the internet. 
+                    So you can play online with other people. """, False],
+                    ["How much experience do you have with this topic?", """I have a lot of experience with the concept of syncronizing Games over the internet. 
+                    But I just built three or four large online games, becuase they are always a lot of work.<br>
+                    """, False],
+                    ["Which online Games have you built before?", """
+                    <p style='font-family: "Oswald";'><u>CardGame</u></p>
+                    <p style='font-family: "Oswald";'><u>ModGame</u></p>
+                    """, False]
+                ], "openclickExample"],
                 ["Discord Bots", [
                     ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
                     ["What is a Discord bot?", """A discord bot is a program that connects to the discord server and remote controlls an account over the Java Discord API (JDA).<br>
@@ -64,14 +77,13 @@ DROPDOWN_LIST = [
                     ["Where did you use PythonFlask WebServers before?", """Almost all of the websites I currently host are made with Python and Flask.<br><br>
                     For example Project like this Page, The FileStorageServer or the ODIN-Projectare completely made in Python and mostly with Flask.<br>
                     But you can find python flask also In a lot of my other Projects, like the Temperature Logger or the ModGame WebServer.
-                    
                     """, False]
                 ]],
                 ["Selenium", [
                     ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False]
                 ]],
                 ["Basic Python", [
-                    ["What du you mean with basic Python?", "Every library I used but didn't talk about before!", False]
+                    ["What do you mean with basic Python?", "Every library I used but didn't talk about before!", False]
                 ]]
               ]
      ],
@@ -79,7 +91,7 @@ DROPDOWN_LIST = [
                 ["JavaScript", [
                     ["What is JavaScript?", "JavaScript is a programming language, that can be executed by browsers to modify the page.", False],
                     ["Where did you use JavaScript before?", "Chart JS --> OnTimeLogger/TempLogger", False],
-                    ["Interesting example", "<button onclick='console.log(this.innerText);if(this.innerText==\"Click me!\"){trigger_easteregg(true);rewrite(this);}'>Click me!</button>", False]
+                    ["Interesting example", "<button onclick='trigger_easteregg(true); if(this.innerText==\"Click me!\"){rewrite(this);}'>Click me!</button>", False]
                 ]],
                 ["html", [
                     ["What is html?", "HTML is markup language, used to create the basic structure of websites.", False]
@@ -101,6 +113,7 @@ DROPDOWN_LIST = [
 ]
 
 
+
 #Syntax: Name, onRequestAdress
 serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"], ["DownloadServer", "http://nonamenetwork.hopto.org:34567/"]]
 
@@ -116,6 +129,15 @@ def buildDropdowns(item_list):
         for skill in language_block_skills:
             skill_block_header = skill[0]
             skill_block_faq = skill[1]
+
+
+            extraclasses = "noextras"
+            #print(str(language_block_skills) + str(len(language_block_skills)) + "\n\n")
+
+            if len(skill) == 3:
+                extraclasses += " " + str(skill[2])
+
+
             effectclasses = "mousepointer hvr-grow"
             afterbr = "<br>"
             if len(skill_block_faq) == 0:
@@ -123,7 +145,7 @@ def buildDropdowns(item_list):
                 afterbr = ""
             skill_opening_section_id = f"Section_{language_block_header}_{skill_block_header}".replace(' ', '').replace("?", "").replace(".", "").replace(",", "").replace("/", "")
             outputHTML += f"""
-            <p data-toggle="collapse" data-target="#{skill_opening_section_id}" class="hideheader {effectclasses}"><u>{skill_block_header}</u></p>{afterbr}
+            <p data-toggle="collapse" data-target="#{skill_opening_section_id}" class="hideheader {effectclasses} {extraclasses}"><u>{skill_block_header}</u></p>{afterbr}
             <div class="infoText collapse openSection" id="{skill_opening_section_id}">
             """
 
@@ -158,8 +180,9 @@ def thread_requesting():
         #print(reachability_list)
         time.sleep(30)
 
-state_on = "🍏online"
-state_off = "🍎offline"
+state_on = "🍏online"#✔
+state_off = "🍎offline"#❌
+state_loading = "⏱loading..."
 
 
 def listServiceStates():
@@ -180,7 +203,7 @@ def listServiceStates():
                 msg = state_off
                 color = "red"
         else:
-            msg = "loading..."
+            msg = state_loading
             color = "grey"
         innerBuild += f"<span class='retype onstate' style='color: {color};'>{msg}</span>"
         innerBuild += "</li>"

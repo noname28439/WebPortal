@@ -26,7 +26,7 @@ function spawn(removeOnEnd){
     console.log("Triggered Easteregg...")
     let element = document.createElement("p");
     element.innerHTML=getFace()
-    element.style = "position: fixed; font-size: 500%; left: 100px; top: 100px; z-index: 1; transform: rotate(90deg);"
+    element.style = "position: fixed; font-size: 500%; left: -100px; top: -100px; z-index: 1; transform: rotate(90deg);"
 
     document.body.appendChild(element);
 

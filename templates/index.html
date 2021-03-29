@@ -32,11 +32,12 @@
             Hello and welcome, or as we say in germany "Moin Meister"!<br>
             My name is Leon and I initially started programming Java in 2015.<br>
             From there on I started gathering as much knowledge as I could.<br>
-            So you can find a list of the things I worked with in the last years down below. (click them)
+            So you can find a list of the things I worked with in the last years down below. <br>
+            <span style="color: darkgray;" class="mousepointer hvr-bounce-in" onclick="let elementList = document.getElementsByClassName('openclickExample'); for(e in elementList){elementList[e].click()}">(click them)</span>
         </p>
 
         <br><br>
-        <h1 class="header" onclick="spawn(true)">--Experience--</h1>
+        <h1 class="header">--Experience--</h1>
 
         <br><br>
     </center>
@@ -60,7 +61,7 @@
 
 
 <div class="ProgrammActivityList" style="font-size: 150%;">
-    <p style="padding:0px; margin:0px; margin-top: 10px; margin-left: 10px; font-size: 200%;"><u>Projects</u></p>
+    <p style="padding:0px; margin:0px; margin-top: 10px; margin-left: 10px; font-size: 200%;"><u onclick="spawn(true)";>Projects</u></p>
     <ul>
         {{PY_ON_SERVICES}}
     </ul>
