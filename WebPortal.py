@@ -47,11 +47,19 @@ reachability_list = {}
 DROPDOWN_LIST = [
     ["Java", [
                 ["Socket Programming", [
-                    ["What is socket programming?", "Sockets are a way of transferring information over the Internet with the TCP protocol.", False],
-                    ["Where did you use socket programming before?", "In some projects you little shit!", False]
+                    ["What is socket programming?", "Socket programming means setting up an server behind a specific port on a server so that other socket can connect to it and transfer information over the internet.", False],
+                    ["Where did you use socket programming before?", """I used Sockets for almost every project, that needs to communicate directly over the Internet. <br>
+                    That means that all my online Games like CardGame, ModGame or NoNameGame are built with this method. 
+                    Additionally i used this in some other projects like the <a href='https://github.com/noname28439/MinecraftRemoteController' class='textlink hvr-grow'>Minecraft Remote Controller Mod</a> 
+                    or my <a href='https://github.com/noname28439/DeviceController' class='textlink hvr-grow'>Local IOT Server</a>.
+                    """, False]
                 ]],
-                ["2D Games", [
-                    ["Examples for games you created?", "CardGame, ModGame, NoNameGame", False]
+                ["Graphical 2D Applications", [
+                    ["Examples for 2D Apps you created?", """
+                    <img style='height: 200px; float: right; margin-right: 10%;' src='/static/public/graphics/CardGame.PNG' title='CardGame' onclick="showFullScreen(this);" class='mousepointer'>
+                    So of course all my Games are Graphical Applications. For example here is a picture of CardGame<br> 
+                    I also built some Graphical Apps to for example display data. <br>
+                    An example for kind of an app would be <a href='https://github.com/noname28439/File-Navigame' class='textlink hvr-grow'>File NaviGame</a>. """, False]
                 ]],
                 ["Online Games", [
                     ["What are online games?", """Online games are basically just 2D Games.<br> But the Content, that is shown in the game is syncronized over the internet. 
@@ -63,7 +71,7 @@ DROPDOWN_LIST = [
                     <p style='font-family: "Oswald";'><u>CardGame</u></p>
                     <p>
                     In CardGame you get Cards and then use them to damage your opponents. And finally knock them out, to that they can't do anything anymore. <br>
-                    <img style='height: 150px; float: right; margin-right: 10%;' src='/static/public/graphics/CG_Stammbaum.png' onclick="showFullScreen(this);">
+                    <img style='height: 150px; float: right; margin-right: 10%;' src='/static/public/graphics/CG_Stammbaum.png' onclick="showFullScreen(this);" class='mousepointer'>
                     But you can also use many special tactics in the game for example you can combind some cards to even stronger ones to deal more damage. 
                     And there are a bunch of special effects Cards that can be used to for example see or steal your opponents cards.
                     You can also work in teams and give Cards to a player or revive him if he is down. 
@@ -72,10 +80,30 @@ DROPDOWN_LIST = [
                     <br>
                     <p style='font-family: "Oswald";'><u>ModGame</u></p>
                     <p>
-                    <img style='width: 200px; height: 200px; float: right; margin-right: 10%;'>
+                    Mod Game is a really unconventional game. Because it's basically just a Server. And every player builds his own client.<br>
+                    That means the game can look very different from player to player, because its the users choice how to disply the information the Server provides him. <br>
+                    <img style='height: 200px; float: right; margin-right: 10%;' src='/static/public/graphics/ModGame_0.png' title='My own testing client' onclick="showFullScreen(this);" class='mousepointer'>
+                    And the Goal of the Game is to develop better stragegies and a better and faster reacing client thant the other players to defeat them in Combat. 
+                    And often the players event dont 'play' themselves anymore and let the computer handle all the actions, because the computer is just faster.
+                    Then they just give tactical commands to the computer. 
+                    <img style='height: 200px; float: right; margin-right: 10%;' src='/static/public/graphics/ModGame_3.png' title='My own testing client' onclick="showFullScreen(this);" class='mousepointer'>
+                    This Game also features a live <a href='http://nonamenetwork.hopto.org:25568/io_app' class='textlink hvr-grow'>Website</a>, on which you can see the scores and a live map of the Game. 
                     </p>
                     """, False]
                 ], "openclickExample"],
+                ["Minecraft Plugins", [
+                    ["What is Minecraft?", """Minecraft is one of the most successful Games ever created. <br>You can find more information about in on 
+                    <a href='https://www.google.de/search?q=minecraft&sxsrf=ALeKk01tfLTh44nJJm02n_LBBARcmTDJlg%3A1617894984060&source=hp&ei=SB5vYJLKAfKYjLsPs7qpmAY&iflsig=AINFCbYAAAAAYG8sWL6-RbNG_WMChlv0
+                    O4jyh31a4vYL&oq=minecraft&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBwguELEDEEM6CAgAELEDEIMBOgQIABAKOgcIABAKEMsBOgUIABCxAzoECAAQQ1C-CFiuLGDKLmgAcAB4AIABTogBhQqSAQIyNpgBAKABAaoBB2
+                    d3cy13aXo&sclient=gws-wiz&ved=0ahUKEwiSjrq--O7vAhVyDGMBHTNdCmMQ4dUDCAk&uact=5' class='textlink hvr-grow'>Google</a>
+                    , in the unlikely case you haven't heard about it before. 
+                    """, False],
+                    ["What is a Minecraft Plugin?", "A Minecraft Plugin means a small java app, that is used to write scripts for Minecraft multiplayer servers.", False],
+                    ["Which Minecraft Plugins have you built before? ", """I build a lot of Minecraft plugins, because i started programming with this topic. 
+                    In the past i built some of my own versions with improvements of existing minigames like Bedwars. <br>
+                    But in the last time i mainly focused on creating my own minigame ideas. For example <a href='https://github.com/noname28439/MinecraftFireWar' class='textlink hvr-grow'>FireFight</a>. 
+                    """, False]
+                ]],
                 ["Discord Bots", [
                     ["What is Discord?", "Discord is an app, where you can talk or write with other people just like an online meeting.", False],
                     ["What is a Discord bot?", """A discord bot is a program that connects to the discord server and remote controlls an account over the Java Discord API (JDA).<br>
@@ -92,17 +120,27 @@ DROPDOWN_LIST = [
                     """, False]
                 ]],
                 ["Selenium", [
-                    ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False]
+                    ["What is a Selenium?", "Selenium is a python library that can be used to automatically perform actions in a WebBrowser.", False],
+                    ["What have you built with Selenium before?", """For example i built an Account manager for Instagram accounts, that automatically signs you in in an incognito tab on the press of a button. <br>
+                    or a programm that can automatically send or read Whatsapp message and other things over Whatsapp Web. """, False]
                 ]],
                 ["Basic Python", [
-                    ["What do you mean with basic Python?", "Every library I used but didn't talk about before!", False]
+                    ["What do you mean with basic Python?", "By basic python i mean python libraries that are included like requests, time, sys, threading...", False]
                 ]]
               ]
      ],
     ["Web Development", [
                 ["JavaScript", [
                     ["What is JavaScript?", "JavaScript is a programming language, that can be executed by browsers to modify the page.", False],
-                    ["Where did you use JavaScript before?", "Chart JS --> OnTimeLogger/TempLogger", False],
+                    ["Where did you use JavaScript before?", """JavaScript is part of almost every webpage.
+                    
+                    For example its uesd to write the online and ofline text that you can see when you load the page. <br>
+                    But JavaScript can also be used for much bigger projects. For example in <a href='https://github.com/noname28439/OntimeLogger2.0/blob/main/WebServer/static/scripts/chartScript.js' class='textlink hvr-grow'>showing charts</a>. 
+                    <br>
+                    <img style='height: 100px; margin-left: 50px; margin-top: 25px;' src='/static/public/graphics/Chart0.png' onclick="showFullScreen(this);" class='mousepointer'>
+                    <img style='height: 100px; margin-left: 50px; margin-top: 25px;' src='/static/public/graphics/Chart1.png' onclick="showFullScreen(this);" class='mousepointer'>
+                    
+                    """, False],
                     ["Interesting example", "<button onclick='trigger_easteregg(true); if(this.innerText==\"Click me!\"){rewrite(this);}'>Click me!</button>", False]
                 ]],
                 ["html", [
@@ -110,7 +148,7 @@ DROPDOWN_LIST = [
                 ]],
                 ["css", [
                     ["What is css?", "CSS is used to define very precise, how a HTML elemet should look.", False],
-                    ["Interesting example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
+                    ["Example", "without css: <span>TEST</span> <br> with css: <span style='color: red; border-style:solid; border-radius: 5px; background-color:orange;'>TEST</span>", False]
                 ]],
                 ["SQL", [
                     ["What is SQL?", "SQL is a very popular database type. You use databases to store user infomation like accounts and passwords.", False]
@@ -129,7 +167,14 @@ if os.path.exists("./text-config.json"):
     print("loaded DropdownList from external file [\"./text-config.json\"]")
 
 #Syntax: Name, onRequestAdress
-serviceList = [["ModGame", "http://nonamenetwork.hopto.org:25568"], ["DemoServer", "http://nonamenetwork.hopto.org:187/"], ["ODIN", "http://nonamenetwork.hopto.org:25569/"], ["DownloadServer", "http://nonamenetwork.hopto.org:34567/"]]
+serviceList = [
+    ["NWCKeys", "https://odin-project.hopto.org:25570/nwck/viewer/"],
+    ["ModGame", "https://nonamenetwork.hopto.org:25572"],
+    ["DemoServer", "http://nonamenetwork.hopto.org:187/"],
+    ["ODIN", "https://odin-project.hopto.org:25570/"],
+    ["DownloadServer", "http://nonamenetwork.hopto.org:34567/"],
+    ["LCD Messanger", "http://nonamenetwork.hopto.org:25571/"]
+]
 
 
 def buildDropdowns(item_list):
@@ -237,14 +282,16 @@ if __name__ == "__main__":
     requester.daemon = True
     requester.start()
 
-    port = 25565
+    port = 25566
     if SETTINGS_READ_PARAMETER("port") != None:
         port = int(SETTINGS_READ_PARAMETER("port"))
 
-    debug = True
-    if SETTINGS_READ_PARAMETER("debug") != None:
-        print("found...")
-        debug = SETTINGS_READ_PARAMETER("debug")
-    print(f"Red --> Debug: {debug} | port: {port}")
-    app.run(debug=debug, host="0.0.0.0", port=port, threaded=True)
-
+    read_debug_mode = SETTINGS_READ_PARAMETER("debug")
+    is_debug = True
+    if read_debug_mode is not None:
+        if read_debug_mode == "False":
+            is_debug = False
+        else:
+            is_debug = True
+    print(f"Red --> Debug: {is_debug} | port: {port}")
+    app.run(debug=bool(is_debug), host="0.0.0.0", port=port, threaded=True)
